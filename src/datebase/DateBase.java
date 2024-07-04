@@ -1,5 +1,7 @@
 package datebase;
 
+import models.Announcement;
+import models.Favorite;
 import models.User;
 
 import java.util.ArrayList;

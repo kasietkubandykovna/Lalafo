@@ -1,5 +1,4 @@
 package dao.daoImpl;
-
 import dao.AnnouncementDao;
 import datebase.DateBase;
 import models.Announcement;
@@ -45,4 +44,7 @@ public class AnnouncementDaoImpl implements AnnouncementDao {
         DateBase.users.stream().forEach(user -> user.getAnnouncements().removeIf(announcement -> announcement.getId().equals(id)));
         return "success";
     }
+
+public class AnnouncementDaoImpl {
+
 }
