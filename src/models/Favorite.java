@@ -3,12 +3,17 @@ package models;
 import java.util.List;
 
 public class Favorite {
+ private Long id;
  private User user;
  private List<Announcement>announcements;
 
  public Favorite(User user, List<Announcement> announcements) {
+  this.id = id;
   this.user = user;
   this.announcements = announcements;
+ }
+
+ public Favorite() {
  }
 
  public User getUser() {
@@ -25,6 +30,14 @@ public class Favorite {
 
  public void setAnnouncements(List<Announcement> announcements) {
   this.announcements = announcements;
+ }
+
+ public Long getId() {
+  return id;
+ }
+
+ public void setId(Long id) {
+  this.id = id;
  }
 
  @Override

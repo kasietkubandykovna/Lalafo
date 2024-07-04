@@ -1,16 +1,21 @@
 package models;
 
 public class Announcement {
+    private Long id;
     private String name;
     private String description;
     private  int price;
     private String owner;
 
-    public Announcement(String name, String description, int price, String owner) {
+    public Announcement(Long id, String name, String description, int price, String owner) {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
         this.owner = owner;
+    }
+
+    public Announcement() {
     }
 
     public String getName() {
@@ -43,6 +48,14 @@ public class Announcement {
 
     public void setOwner(String owner) {
         this.owner = owner;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @Override

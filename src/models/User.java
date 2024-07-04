@@ -17,6 +17,9 @@ private Long id;
         this.id=id;
     }
 
+    public User() {
+    }
+
     public Long getId() {
         return id;
     }
