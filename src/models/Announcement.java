@@ -20,10 +20,6 @@ public class Announcement {
     }
 
     public Announcement(String name, String description, int price, String owner) {
-
-    public Announcement(Long id, String name, String description, int price, String owner) {
-        this.id = id;
-
         this.name = name;
         this.description = description;
         this.price = price;
@@ -36,9 +32,6 @@ public class Announcement {
 
     public void setId(Long id) {
         this.id = id;
-
-    public Announcement() {
-
     }
 
     public String getName() {
@@ -73,18 +66,11 @@ public class Announcement {
         this.owner = owner;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     @Override
     public String toString() {
-        return "\nAnnouncement{" +
-                "name='" + name + '\'' +
+        return "Announcement{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", price=" + price +
                 ", owner='" + owner + '\'' +
