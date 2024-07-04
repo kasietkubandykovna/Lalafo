@@ -9,6 +9,4 @@ import java.util.List;
 
 public class DateBase {
    public static List<User>users=new ArrayList<>();
-   public  static List<Announcement>announcements=new ArrayList<>();
-   public static List<Favorite>favorites=new ArrayList<>();
 }

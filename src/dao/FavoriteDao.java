@@ -1,15 +1,13 @@
 package dao;
 
-import models.Announcement;
 import models.Favorite;
 
 import java.util.List;
 
 public interface FavoriteDao {
-    String addToFavorite(Announcement announcement);
-    String deleteFavoritebyId(Long id);
-    Announcement updateFavoriteById(Long id, Announcement announcement);
-    Announcement getFavoriteByID(Long id);
+    String addToFavorite(Long userId,Long announcementId);
+    String deleteFavoritebyId(Long userId,Long favoriteId);
+    Favorite getFavoriteByID(Long userId, Long favoriteId);
     List<Favorite> getAllFavoriteByUserId(Long userId);
 
 }

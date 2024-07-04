@@ -1,43 +1,35 @@
 package service.serviceImpl;
 
+import dao.FavoriteDao;
 import dao.daoImpl.FavoriteDaoImpl;
-import models.Announcement;
 import models.Favorite;
 import service.FavoriteService;
 
 import java.util.List;
 
 public class FavoriteServiceImpl implements FavoriteService {
-    FavoriteDaoImpl favoriteDao=new FavoriteDaoImpl();
-
-
+ FavoriteDao favoriteDao = new FavoriteDaoImpl();
     @Override
-    public String addToFavorite(Announcement announcement) {
-        favoriteDao.addToFavorite(announcement);
-        return null;
+    public String addToFavorite(Long userId, Long announcementId) {
+        favoriteDao.addToFavorite(userId, announcementId);
+        return "";
     }
 
     @Override
-    public String deleteFavoritebyId(Long id) {
-        favoriteDao.deleteFavoritebyId(id);
-        return null;
+    public String deleteFavoritebyId(Long userId, Long announcementId) {
+        favoriteDao.deleteFavoritebyId(userId, announcementId);
+        return "";
     }
 
     @Override
-    public Announcement updateFavoriteById(Long id, Announcement announcement) {
-        favoriteDao.updateFavoriteById(id,announcement);
-        return null;
-    }
+    public Favorite getFavoriteByID(Long userId, Long favoriteId) {
 
-    @Override
-    public Announcement getFavoriteByID(Long id) {
-        favoriteDao.getFavoriteByID(id);
-        return null;
+        return favoriteDao.getFavoriteByID(userId, favoriteId);
     }
 
     @Override
     public List<Favorite> getAllFavoriteByUserId(Long userId) {
-        favoriteDao.getAllFavoriteByUserId(userId);
-        return null;
+
+        return favoriteDao.getAllFavoriteByUserId(userId);
     }
 }
