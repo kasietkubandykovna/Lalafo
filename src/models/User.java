@@ -2,20 +2,25 @@ package models;
 
 import enam.Role;
 
+import java.util.List;
+
 public class User {
     private String firstName;
     private String email;
     private int password;
-private Role role;
-private Long id;
-
-    public User(Long id,String firstName, String email, int password, Role role) {
+    private Role role;
+    private Long id;
+    private List<Announcement>announcements;
+    public User(Long id,String firstName, String email, int password, Role role, List<Announcement> announcements) {
         this.firstName = firstName;
         this.email = email;
         this.password = password;
         this.role = role;
         this.id=id;
+        this.announcements = announcements;
     }
+
+
 
     public Long getId() {
         return id;
@@ -55,6 +60,14 @@ private Long id;
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    public List<Announcement> getAnnouncements() {
+        return announcements;
+    }
+
+    public void setAnnouncements(List<Announcement> announcements) {
+        this.announcements = announcements;
     }
 
     @Override
