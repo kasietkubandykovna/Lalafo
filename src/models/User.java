@@ -7,12 +7,22 @@ public class User {
     private String email;
     private int password;
 private Role role;
+private Long id;
 
-    public User(String firstName, String email, int password, Role role) {
+    public User(Long id,String firstName, String email, int password, Role role) {
         this.firstName = firstName;
         this.email = email;
         this.password = password;
         this.role = role;
+        this.id=id;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getFirstName() {
@@ -54,6 +64,7 @@ private Role role;
                 ", email='" + email + '\'' +
                 ", password=" + password +
                 ", role=" + role +
+                ", id=" + id +
                 '}';
     }
 }
