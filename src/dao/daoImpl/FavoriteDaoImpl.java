@@ -37,6 +37,7 @@ public class FavoriteDaoImpl implements FavoriteDao {
                 }
             }
         }
+        return null;
     }
 
     @Override
