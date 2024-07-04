@@ -27,12 +27,17 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public User updateUser(Long id, String newUser) {
-        User user=getUserById(id);
-        if (user!=null){
-        user.setFirstName(newUser);
-        return user;
-    }return null;
+    public void updateUser(Long id, User newUser) {
+  DateBase.users.stream().filter(user -> user.getId().equals(id)).findFirst().
+       ifPresent(user -> {
+              // user.setId(user.getId());
+        user.setFirstName(newUser.getFirstName());
+    user.setEmail(newUser.getEmail());
+    user.setPassword(newUser.getPassword());
+    user.setRole(newUser.getRole());
+    user.setAnnouncements(newUser.getAnnouncements());
+    user.setFavorites(newUser.getFavorites());
+          });
     }
 
     @Override

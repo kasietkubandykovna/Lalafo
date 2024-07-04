@@ -2,6 +2,7 @@ package dao.daoImpl;
 
 import dao.FavoriteDao;
 import datebase.DateBase;
+import models.Announcement;
 import models.Favorite;
 import models.User;
 
@@ -10,12 +11,21 @@ import java.util.List;
 public class FavoriteDaoImpl implements FavoriteDao {
 
     @Override
-    public String addToFavorite(Long userId, Long announcementId) {
-        DateBase.users.stream().filter(user -> user.getId().equals(userId)).findFirst().
-                ifPresent(user -> user.getAnnouncements().stream()
-        .filter(announcement -> announcement.getId().equals(announcementId))
-                .findFirst().orElse(null));
-        return "success";
+    public String addToFavorite(Long userId, Long announcementId,Favorite favorite) {
+//        DateBase.users.stream().filter(user -> user.getId().equals(userId)).findFirst().
+//                ifPresent(user -> user.getAnnouncements().stream()
+//        .filter(announcement -> announcement.getId().equals(announcementId))
+//                .findFirst().orElse(null));
+//        return "success";
+        for (User user : DateBase.users) {
+            if (userId.equals(user.getId())) {
+                for (Announcement announcement : user.getAnnouncements()) {
+                    if (announcementId.equals(announcement.getId())) {
+                        user.setFavorites(List.of(favorite));
+                    }
+                }
+            }
+        }return null;
     }
 
     @Override
