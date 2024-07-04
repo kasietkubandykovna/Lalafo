@@ -11,19 +11,28 @@ public class User {
     private Role role;
     private Long id;
     private List<Announcement>announcements;
+
+    public User(Long id,String firstName, String email, int password, Role role, List<Announcement> announcements) {
+
     private List<Favorite>favorites;
 
     public User(Long id,String firstName, String email, int password, Role role) {
+
         this.firstName = firstName;
         this.email = email;
         this.password = password;
         this.role = role;
         this.id=id;
 
+        this.announcements = announcements;
+
+
     }
 
     public User() {
     }
+
+
 
     public Long getId() {
         return id;
@@ -71,6 +80,18 @@ public class User {
 
     public void setAnnouncements(List<Announcement> announcements) {
         this.announcements = announcements;
+
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "firstName='" + firstName + '\'' +
+                ", email='" + email + '\'' +
+                ", password=" + password +
+                ", role=" + role +
+                ", id=" + id +
+                '}';
     }
 
     public List<Favorite> getFavorites() {
@@ -80,6 +101,4 @@ public class User {
     public void setFavorites(List<Favorite> favorites) {
         this.favorites = favorites;
     }
-
-
 }
