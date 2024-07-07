@@ -10,21 +10,16 @@ import service.serviceImpl.UserServiceImpl;
 import java.util.ArrayList;
 
 public class Main {
-    public static void main(String[] args)
-    {
-
-
+    public static void main(String[] args) {
         UserServiceImpl user =new UserServiceImpl();
         FavoriteServiceImpl favorite =new FavoriteServiceImpl();
-
         user.addUser(new User(1L,"Kasiet","Kasiet@gmail.com",12345, Role.USER,new ArrayList<>(),new ArrayList<>()));
         user.addUser(new User(2L,"Kurmanbek","Kurmanbek@gmail.com",12345, Role.USER,new ArrayList<>(),new ArrayList<>()));
         user.addUser(new User(3L,"Nurkyz","Nurkyz@gmail.com",12345, Role.USER,new ArrayList<>(),new ArrayList<>()));
         user.addUser(new User(4L,"Omurzak baike","Omurzak.baike@gmail.com",12345, Role.USER,new ArrayList<>(),new ArrayList<>()));
-
         System.out.println(user.getAllUsers());
 //        user.updateUser(1L, new User("Asyl","Asyl@gmail.com",12345, Role.USER,new ArrayList<>(),new ArrayList<>()));
-//        System.out.println(user.deleteUser(4L));
+        System.out.println(user.deleteUser(4L));
 
         AnnouncementService announcement =new AnnouncementServiceImpl();
         System.out.println(announcement.addAnnouncement(1L, new Announcement(1L, "iphone14", "sostayanie zynk baterii 93%", 60000, "Kasiet")));
@@ -37,13 +32,13 @@ public class Main {
         System.out.println(announcement.deleteAnnouncement(3L));
         System.out.println(announcement.getAllAnnouncement(1L));
 
-        System.out.println(favorite.addToFavorite(1L,2L,3L));
-//        System.out.println(user.getAllUsers());
-//        System.out.println(favorite.getAllFavoriteByUserId(3L));
-        System.out.println(user.getUserById(3L));
-        System.out.println(favorite.getFavoriteByID(3L, 1L));
-        System.out.println(favorite.deleteFavoritebyId(3L, 1L));
-        System.out.println(user.getUserById(3L));
+        System.out.println(favorite.addToFavorite(1L,2L,2L));
+        System.out.println(user.getAllUsers());
+        System.out.println(favorite.getAllFavoriteByUserId(2L));
+        System.out.println(user.getUserById(2L));
+        System.out.println(favorite.getFavoriteByID(2L, 1L));
+//        System.out.println(favorite.deleteFavoritebyId(3L, 1L));
+        System.out.println(user.getUserById(2L));
 
 
 

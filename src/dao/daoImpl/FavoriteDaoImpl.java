@@ -13,17 +13,21 @@ public class FavoriteDaoImpl implements FavoriteDao {
 
     @Override
     public String addToFavorite(Long vendorId, Long announcementId,Long userId) {
-//        DateBase.users.stream().filter(user -> user.getId().equals(userId)).findFirst().
-//                ifPresent(user -> user.getAnnouncements().stream()
-//        .filter(announcement -> announcement.getId().equals(announcementId))
-//                .findFirst().orElse(null));
-//        return "success";
         for (User user : DateBase.users) {
             if (vendorId.equals(user.getId())) {
                 for (Announcement announcement : user.getAnnouncements()) {
                     if (announcementId.equals(announcement.getId())) {
-                       DateBase.users.stream().filter(user1 -> user1.getId().equals(userId)).findFirst().filter(user1 ->
-                               user1.getFavorites().add(new Favorite(GenereteId.genFavoriteId(),user.getFirstName(),List.of(announcement))));
+//                       DateBase.users.stream().filter(user1 -> user1.getId().equals(userId)).findFirst().filter(user1 ->
+//                               user1.getFavorites().add(new Favorite(GenereteId.genFavoriteId(),user.getFirstName(),List.of(announcement))));
+//                    }
+                    for(User user2 : DateBase.users) {
+                        if (user2.getId().equals(userId)) {
+                            user2.getFavorites().add(new Favorite(GenereteId.genFavoriteId(),user.getFirstName(),List.of(announcement)));
+                        }
+                    }
+
+
+
                     }
                 }
             }
