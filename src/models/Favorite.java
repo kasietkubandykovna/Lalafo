@@ -4,31 +4,20 @@ import java.util.List;
 
 public class Favorite {
  private Long id;
- private User user;
- private List<Announcement>announcements;
-
- public Favorite(User user, List<Announcement> announcements) {
-  this.id = id;
-  this.user = user;
-  this.announcements = announcements;
- }
+ private String userName;
+ private List<Announcement> announcements;
 
  public Favorite() {
  }
 
- public User getUser() {
-  return user;
+ public Favorite(String userName, List<Announcement> announcements) {
+  this.userName = userName;
+  this.announcements = announcements;
  }
 
- public void setUser(User user) {
-  this.user = user;
- }
-
- public List<Announcement> getAnnouncements() {
-  return announcements;
- }
-
- public void setAnnouncements(List<Announcement> announcements) {
+ public Favorite(Long id, String userName, List<Announcement> announcements) {
+  this.id = id;
+  this.userName = userName;
   this.announcements = announcements;
  }
 
@@ -40,10 +29,27 @@ public class Favorite {
   this.id = id;
  }
 
+ public String getUserName() {
+  return userName;
+ }
+
+ public void setUserName(String userName) {
+  this.userName = userName;
+ }
+
+ public List<Announcement> getAnnouncements() {
+  return announcements;
+ }
+
+ public void setAnnouncements(List<Announcement> announcements) {
+  this.announcements = announcements;
+ }
+
  @Override
  public String toString() {
-  return "\nFavorite{" +
-          "user=" + user +
+  return "Favorite{" +
+          "id=" + id +
+          ", userName='" + userName + '\'' +
           ", announcements=" + announcements +
           '}';
  }

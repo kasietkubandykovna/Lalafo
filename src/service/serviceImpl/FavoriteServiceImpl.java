@@ -10,8 +10,8 @@ import java.util.List;
 public class FavoriteServiceImpl implements FavoriteService {
  FavoriteDao favoriteDao = new FavoriteDaoImpl();
     @Override
-    public String addToFavorite(Long userId, Long announcementId,Favorite favorite) {
-        favoriteDao.addToFavorite(userId, announcementId,favorite);
+    public String addToFavorite(Long vendorId, Long announcementId,Long userId) {
+        favoriteDao.addToFavorite(vendorId, announcementId, userId);
         return "";
     }
 

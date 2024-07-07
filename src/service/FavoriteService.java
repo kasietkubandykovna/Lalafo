@@ -5,7 +5,7 @@ import models.Favorite;
 import java.util.List;
 
 public interface FavoriteService {
-    String addToFavorite(Long userId, Long announcementId,Favorite favorite);
+    String addToFavorite(Long vendorId, Long announcementId,Long userId);
 
     String deleteFavoritebyId(Long userId, Long announcementId);
 
