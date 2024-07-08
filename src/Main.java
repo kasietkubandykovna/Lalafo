@@ -36,6 +36,7 @@ public class Main {
                 12. get favorite by id
                 13. get all favorite by user id
                 14. delete favorite by id""");
+
         List<User> users = Arrays.asList(
                 new User(1L,"Kasiet","Kasiet@gmail.com",12345, Role.USER,new ArrayList<>(),new ArrayList<>()),
         new User(2L,"Kurmanbek","Kurmanbek@gmail.com",12345, Role.USER,new ArrayList<>(),new ArrayList<>()),
@@ -49,12 +50,11 @@ public class Main {
                 new Announcement(3L, "iphone13", "sostayanie zynk baterii 93%", 45000, "Kasiet"));
 
 
-
         while (true) {
             Scanner sc = new Scanner(System.in);
-
-
-            int number = sc.nextInt();
+            try {
+                String imput = sc.nextLine();
+                int number = Integer.parseInt(imput);
                 switch (number) {
                     case 1-> {
                         for (User user1: users){
@@ -65,12 +65,8 @@ public class Main {
                     case 3-> System.out.println(user.getUserById(1L));
                     case 4-> user.updateUser(2L,new User("Asyl","Asyl@gmail.com",12345, Role.USER,new ArrayList<>(),new ArrayList<>()));
                     case 5-> System.out.println(user.deleteUser(4L));
-                    case 6-> {
-                        for (Announcement announcement1:announcements){
-                            System.out.println(announcement.addAnnouncement(1L, announcement1));
-                        }
-                    }
-                            //System.out.println(announcement.addAnnouncement(1L,new Announcement(1L,"iphone14", "sostayanie zynk baterii 93%", 60000, "Kasiet")));
+                    case 6-> {for (Announcement announcement1:announcements){
+                            System.out.println(announcement.addAnnouncement(1L, announcement1));}}
                     case 7-> System.out.println(announcement.getAllAnnouncement(1L));
                     case 8-> System.out.println(announcement.getAnnouncementById(2L));
                     case 9-> announcement.updateAnnouncement(2L,new Announcement("iphone15","new",13000,"Kasiet"));
@@ -80,14 +76,7 @@ public class Main {
                     case 13-> System.out.println(favorite.getAllFavoriteByUserId(1L));
                     case 14-> System.out.println(favorite.deleteFavoritebyId(2L, 1L));
                 }
-
-
-
-
-
-
-
-
-    }
+    }catch (NumberFormatException s) {
+                System.out.println("san ber");}}
     }
 }
