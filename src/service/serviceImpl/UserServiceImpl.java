@@ -3,6 +3,7 @@ package service.serviceImpl;
 import dao.UserDao;
 import dao.daoImpl.UserDaoImpl;
 import models.User;
+import myExceptionen.MyExceptionen;
 import service.UserService;
 
 import java.util.List;
@@ -21,7 +22,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getUserById(Long id) {
+    public User getUserById(Long id) throws MyExceptionen {
         return userDao.getUserById(id);
     }
 

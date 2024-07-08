@@ -3,6 +3,7 @@ package dao.daoImpl;
 import dao.UserDao;
 import datebase.DateBase;
 import models.User;
+import myExceptionen.MyExceptionen;
 
 import java.util.List;
 
@@ -19,11 +20,17 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public User getUserById(Long id) {
-      return DateBase.users.stream()
-              .filter(user -> user.getId().equals(id))
-              .findFirst().orElse(null);
+    public User getUserById(Long id) throws MyExceptionen {
+        try {
 
+
+            return DateBase.users.stream()
+                    .filter(user -> user.getId().equals(id))
+                    .findFirst().orElseThrow(() -> new MyExceptionen("User with ID " + id + " not found"));
+        }catch (MyExceptionen e){
+            System.out.println(e.getMessage());
+        }
+        return null;
     }
 
     @Override
@@ -37,7 +44,7 @@ public class UserDaoImpl implements UserDao {
     user.setRole(newUser.getRole());
     user.setAnnouncements(newUser.getAnnouncements());
     user.setFavorites(newUser.getFavorites());
-          });
+       });
     }
 
     @Override

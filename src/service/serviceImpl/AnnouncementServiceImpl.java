@@ -3,6 +3,7 @@ package service.serviceImpl;
 import dao.AnnouncementDao;
 import dao.daoImpl.AnnouncementDaoImpl;
 import models.Announcement;
+import myExceptionen.MyExceptionen;
 import service.AnnouncementService;
 
 import java.util.List;
@@ -21,7 +22,7 @@ AnnouncementDao announcementDao =new AnnouncementDaoImpl();
     }
 
     @Override
-    public Announcement getAnnouncementById(Long id) {
+    public Announcement getAnnouncementById(Long id) throws MyExceptionen {
             return announcementDao.getAnnouncementById(id);
     }
 

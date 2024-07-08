@@ -2,17 +2,20 @@ import enam.Role;
 import models.Announcement;
 import models.Favorite;
 import models.User;
+import myExceptionen.MyExceptionen;
 import service.AnnouncementService;
 import service.serviceImpl.AnnouncementServiceImpl;
 import service.serviceImpl.FavoriteServiceImpl;
 import service.serviceImpl.UserServiceImpl;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MyExceptionen {
         UserServiceImpl user =new UserServiceImpl();
         FavoriteServiceImpl favorite =new FavoriteServiceImpl();
+
         user.addUser(new User(1L,"Kasiet","Kasiet@gmail.com",12345, Role.USER,new ArrayList<>(),new ArrayList<>()));
         user.addUser(new User(2L,"Kurmanbek","Kurmanbek@gmail.com",12345, Role.USER,new ArrayList<>(),new ArrayList<>()));
         user.addUser(new User(3L,"Nurkyz","Nurkyz@gmail.com",12345, Role.USER,new ArrayList<>(),new ArrayList<>()));
@@ -34,12 +37,30 @@ public class Main {
 
         System.out.println(favorite.addToFavorite(1L,2L,2L));
         System.out.println(user.getAllUsers());
-        System.out.println(favorite.getAllFavoriteByUserId(2L));
-        System.out.println(user.getUserById(2L));
-        System.out.println(favorite.getFavoriteByID(2L, 1L));
-//        System.out.println(favorite.deleteFavoritebyId(3L, 1L));
+
+        System.out.println(favorite.getAllFavoriteByUserId(3L));
         System.out.println(user.getUserById(2L));
 
+        System.out.println(favorite.getFavoriteByID(2L, 1L));
+
+        System.out.println(favorite.deleteFavoritebyId(3L, 2L));
+        System.out.println(user.getUserById(2L));
+
+        System.out.println(favorite.getAllFavoriteByUserId(2L));
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
 
 
 

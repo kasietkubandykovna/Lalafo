@@ -2,6 +2,7 @@ package dao.daoImpl;
 import dao.AnnouncementDao;
 import datebase.DateBase;
 import models.Announcement;
+import myExceptionen.MyExceptionen;
 
 import java.util.List;
 
@@ -10,7 +11,8 @@ public class AnnouncementDaoImpl implements AnnouncementDao {
     @Override
     public String addAnnouncement(Long userId, Announcement announcement) {
         DateBase.users.stream().filter(user -> user.getId().equals(userId)).
-                findFirst().filter(user -> user.getAnnouncements().add(announcement));
+                findFirst()
+                .filter(user -> user.getAnnouncements().add(announcement));
         return "success";
     }
 
@@ -19,12 +21,18 @@ public class AnnouncementDaoImpl implements AnnouncementDao {
         return DateBase.users.stream().filter(user -> user.getId().equals(userId)).findFirst().get().getAnnouncements();
     }
         @Override
-    public Announcement getAnnouncementById(Long id) {
-        return DateBase.users.stream().
-                flatMap(user -> user.getAnnouncements().stream())
-                .filter(announcement -> announcement.getId().equals(id)).findFirst()
-                .orElse(null);
-    }
+    public Announcement getAnnouncementById(Long id)  {
+            try {
+                return DateBase.users.stream().
+                        flatMap(user -> user.getAnnouncements().stream())
+                        .filter(announcement -> announcement.getId().equals(id)).findFirst()
+                        .orElseThrow(() -> new MyExceptionen("Announcement with ID " + id + " not found"));
+            } catch (MyExceptionen e) {
+                System.out.println(e.getMessage());
+            }
+
+            return null;
+        }
 
     @Override
     public void updateAnnouncement(Long id, Announcement newAnnouncement) {
