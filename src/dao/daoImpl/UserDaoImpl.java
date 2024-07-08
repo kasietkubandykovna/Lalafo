@@ -37,7 +37,6 @@ public class UserDaoImpl implements UserDao {
     public void updateUser(Long id, User newUser) {
   DateBase.users.stream().filter(user -> user.getId().equals(id)).findFirst().
        ifPresent(user -> {
-              // user.setId(user.getId());
         user.setFirstName(newUser.getFirstName());
     user.setEmail(newUser.getEmail());
     user.setPassword(newUser.getPassword());
