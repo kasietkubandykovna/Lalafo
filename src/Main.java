@@ -65,7 +65,7 @@ public class Main {
                     case 3-> System.out.println(user.getUserById(1L));
                     case 4-> user.updateUser(2L,new User("Asyl","Asyl@gmail.com",12345, Role.USER,new ArrayList<>(),new ArrayList<>()));
                     case 5-> System.out.println(user.deleteUser(4L));
-//                    case 6-> System.out.println(announcement.addAnnouncement(1L,announcements));
+                    case 6-> System.out.println(announcement.addAnnouncement(1L,new Announcement(1L,"iphone14", "sostayanie zynk baterii 93%", 60000, "Kasiet")));
                     case 7-> System.out.println(announcement.getAllAnnouncement(1L));
                     case 8-> System.out.println(announcement.getAnnouncementById(2L));
                     case 9-> announcement.updateAnnouncement(2L,new Announcement("iphone15","new",13000,"Kasiet"));
