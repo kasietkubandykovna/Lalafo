@@ -52,8 +52,7 @@ public class Main {
         while (true) {
             Scanner sc = new Scanner(System.in);
 
-//                    String imput = sc.nextLine();
-//                int number = Integer.parseInt(imput);
+
             int number = sc.nextInt();
                 switch (number) {
                     case 1-> {
@@ -78,28 +77,7 @@ public class Main {
 
 
 
-//        FavoriteServiceImpl favorite =new FavoriteServiceImpl();
 
-//        System.out.println(user.getAllUsers());
-////        user.updateUser(1L, new User("Asyl","Asyl@gmail.com",12345, Role.USER,new ArrayList<>(),new ArrayList<>()));
-//        System.out.println(user.deleteUser(4L));
-//
-//        AnnouncementService announcement =new AnnouncementServiceImpl();
-
-//        System.out.println(announcement.getAllAnnouncement(1L));
-//        System.out.println(announcement.getAnnouncementById(2L));
-//        announcement.updateAnnouncement(2L,new Announcement("iphone15","new",13000,"Kasiet"));
-//        System.out.println(announcement.getAnnouncementById(2L));
-//        System.out.println(announcement.deleteAnnouncement(3L));
-//        System.out.println(announcement.getAllAnnouncement(1L));
-//
-//        System.out.println(favorite.addToFavorite(1L,2L,2L));
-//        System.out.println(user.getAllUsers());
-//        System.out.println(favorite.getAllFavoriteByUserId(2L));
-//        System.out.println(user.getUserById(2L));
-//        System.out.println(favorite.getFavoriteByID(2L, 1L));
-////        System.out.println(favorite.deleteFavoritebyId(3L, 1L));
-//        System.out.println(user.getUserById(2L));
 
 
 
