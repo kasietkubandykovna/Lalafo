@@ -2,6 +2,7 @@ import enam.Role;
 import models.Announcement;
 import models.Favorite;
 import models.User;
+import myExceptionen.MyExceptionen;
 import service.AnnouncementService;
 import service.FavoriteService;
 import service.serviceImpl.AnnouncementServiceImpl;
@@ -14,7 +15,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args)throws MyExceptionen {
         UserServiceImpl user =new UserServiceImpl();
         AnnouncementService announcement = new AnnouncementServiceImpl();
         FavoriteService favorite = new FavoriteServiceImpl();
